@@ -1,0 +1,78 @@
+:root{
+  --bg: #f3f3f3;
+  --card: #fffef8;
+  --accent: #2e7d32;
+  --accent-2: #f6d55c;
+  --line: #cfcfcf;
+  --text: #111;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color:var(--text);
+  padding:18px;
+  -webkit-font-smoothing:antialiased;
+}
+
+header{text-align:center;margin-bottom:14px;}
+h1{margin:0 0 6px 0;font-size:20px;letter-spacing:0.6px;}
+p.lead{margin:0;font-size:13px;color:#444;}
+
+.controls{display:flex;gap:8px;justify-content:center;align-items:center;margin:12px 0 18px 0;flex-wrap:wrap;}
+button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;font-weight:600;}
+button.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);}
+
+.sheet{
+  background: linear-gradient(180deg, var(--card), #fff);
+  border-radius:10px;
+  padding:12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  overflow-x:auto;
+}
+
+table{width:100%;border-collapse:collapse;min-width:800px;}
+thead th{
+  position:sticky;
+  top:0;
+  background:linear-gradient(180deg,var(--accent-2), #fff);
+  z-index:2;
+  padding:8px 6px;
+  text-align:center;
+  border-bottom:3px solid var(--accent);
+  font-size:13px;
+}
+thead th#jogadores > p{
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+thead th:first-child{text-align:left;padding-left:14px;width:180;}
+thead input.player-name{width:90%;padding:6px 6px;border-radius:6px;border:1px solid #bbb;font-weight:700;text-align:center;}
+
+tbody td{border-bottom:1px solid var(--line);padding:8px;text-align:center;vertical-align:middle;}
+td.item{text-align:left;padding-left:14px;font-weight:600;background:transparent;}
+tr.section-row td{background:var(--accent);color:#fff;font-weight:800;padding:8px 12px;text-align:left;border-bottom:2px solid #2a6b2a;}
+
+select.note{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-image:none !important;border:2px solid #111;border-radius:6px;width:42px;height:36px;font-size:20px;text-align:center;padding:0;cursor:pointer;background-color:#fff;line-height:1;}
+select.note::-ms-expand{display:none;}
+
+@media (max-width:640px){
+  h1{font-size:18px}
+  thead th:first-child{width:180px}
+  .sheet{padding:10px}
+  select.note{width:36px;height:34px;font-size:18px}
+  thead input.player-name{font-size:13px}
+  table{min-width:700px}
+}
+
+@media print{
+  body{padding:0;background:#fff}
+  header, .controls{display:none}
+  .sheet{box-shadow:none;border-radius:0;padding:0}
+  table{min-width:0; width:100%}
+  select.note{border:1px solid #000}
+  thead th{background:#eee !important}
+}

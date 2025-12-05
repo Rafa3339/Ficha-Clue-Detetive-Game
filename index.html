@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Detetive — Ficha de Anotações (6 jogadores)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Detetive — Ficha de Anotações</h1>
+  <p class="lead">Versão clássica - até 6 jogadores - Use as marcações e coloque os nomes.</p>
+</header>
+
+<div class="controls">
+  <button id="clearBtn" title="Limpar todas as seleções">Limpar tudo</button>
+  <button id="resetNames" class="ghost" title="Limpar nomes dos jogadores">Limpar nomes</button>
+</div>
+
+<main class="sheet">
+  <table aria-label="Ficha de anotações do Detetive">
+    <thead>
+      <tr>
+        <th id="jogadores"><p>Jogadores</p></th>
+        <th><input class="player-name" id="p1" placeholder="Jogador 1" /></th>
+        <th><input class="player-name" id="p2" placeholder="Jogador 2" /></th>
+        <th><input class="player-name" id="p3" placeholder="Jogador 3" /></th>
+        <th><input class="player-name" id="p4" placeholder="Jogador 4" /></th>
+        <th><input class="player-name" id="p5" placeholder="Jogador 5" /></th>
+        <th><input class="player-name" id="p6" placeholder="Jogador 6" /></th>
+      </tr>
+    </thead>
+    <tbody id="sheetBody"></tbody>
+  </table>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
